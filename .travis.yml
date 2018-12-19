@@ -18,6 +18,5 @@ matrix:
       env: DISTNAME=beowulf
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u darkgigabyte --password-stdin
-  - set -v
   - set +e
   - ./build.sh -v -t 'Europe/Berlin' -u darkgigabyte -p -d $DISTNAME
