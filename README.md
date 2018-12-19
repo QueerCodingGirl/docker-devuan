@@ -1,6 +1,5 @@
 # docker-devuan
 [![License][license-img]][license-href]
-[![pipeline][pipeline-img]][pipeline-href]
 [![docker][docker-img]][docker-href]
 
 ## Overview
@@ -13,14 +12,17 @@ share your modifications with the community.
 
 ## Description
 
-Use this script to build your own base system.
+Use this script to build your own base system or use the travis build base images from Docker Hub.
+
+I (darkgigabyte) forked this repo from [https://github.com/vente-privee/docker-devuan] and fixed the build script because it wasn't able to build the ascii image and had no support for beowulf. Also i don't wanted to use their CI system. This repo now uses travis-ci and builds/pushes all devuan releases at a regular interval.
 
 ## Tags
 
 Supported tags.
 
-- 1, jessie, stable, latest
-- 2, ascii, sid
+- 1, jessie, oldstable
+- 2, ascii, stable, latest
+- 3, beowulf, testing
 
 ## Requirements
 
@@ -57,8 +59,8 @@ $ docker login
 
 ## Usage
 
-You first need  to choose which dist  between jessie (1.0) and  ascii (2.0) you
-want (jessie  will be the  'latest' tag)  and you need  to choose you  user (or
+You first need  to choose which dist  between jessie (1.0) and  beowulf (3.0) you
+want (ascii  will be the  'latest' tag)  and you need  to choose you  user (or
 organization) name on Docker Hub.
 
 Show help.
@@ -70,13 +72,13 @@ $ ./build.sh -h
 Build your own Debian image (eg. jessie).
 
 ```bash
-$ ./build.sh -d jessie -u vpgrp
+$ ./build.sh -d jessie -u darkgigabyte
 ```
 
-Build your own Devuan image (eg. jessie) and push it on the Docker Hub.
+Build your own Devuan image (eg. ascii) and push it on the Docker Hub.
 
 ```bash
-$ ./build.sh -d jessie -u vpgrp -p
+$ ./build.sh -d ascii -u darkgigabyte -p
 ```
 
 ## Limitations
@@ -88,22 +90,9 @@ Only work on Debian, Devuan and Ubuntu.
 Please read carefully [CONTRIBUTING.md][contribute-href]  before making a merge
 request.
 
-## Miscellaneous
-
-```
-    ╚⊙ ⊙╝
-  ╚═(███)═╝
- ╚═(███)═╝
-╚═(███)═╝
- ╚═(███)═╝
-  ╚═(███)═╝
-   ╚═(███)═╝
-```
 
 [license-img]: https://img.shields.io/badge/license-Apache-blue.svg
 [license-href]: /LICENSE
-[pipeline-img]: https://git.vpgrp.io/docker/docker-devuan/badges/master/pipeline.svg
-[pipeline-href]: https://git.vpgrp.io/docker/docker-devuan/commits/master
-[docker-img]: https://img.shields.io/docker/pulls/vpgrp/devuan.svg
-[docker-href]: https://registry.hub.docker.com/u/vpgrp/devuan
+[docker-img]: https://img.shields.io/docker/pulls/darkgigabyte/devuan.svg
+[docker-href]: https://registry.hub.docker.com/u/darkgigabyte/devuan
 [contribute-href]: /CONTRIBUTING.md
