@@ -2,7 +2,7 @@
 # shellcheck disable=SC1039
 # shellcheck disable=SC2034
 
-set -e
+###set -e
 
 PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
