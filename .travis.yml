@@ -17,4 +17,5 @@ matrix:
     - name: 'Devuan 3 - beowulf'
       env: DISTNAME=beowulf
 script:
-  - ./build.sh -v -t 'Europe/Berlin' -u darkgigabyte -d $DISTNAME
+  - echo "$DOCKER_PASSWORD" | docker login -u darkgigabyte --password-stdin
+  - ./build.sh -v -t 'Europe/Berlin' -u darkgigabyte -p -d $DISTNAME
