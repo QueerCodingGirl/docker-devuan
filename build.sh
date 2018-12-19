@@ -94,6 +94,7 @@ function docker_bootstrap()
     else
         echo " * debootstrap ${image}" 1>&3
         ${sudo} debootstrap \
+                ${debootstrapverbose}\
                 --arch="${arch}" \
                 --include="${include}" \
                 --exclude="${exclude}" \
@@ -397,8 +398,10 @@ then
     exec 3>&1
     exec 1>/dev/null
     exec 2>/dev/null
+    deboostrapverbose=''
 else
     exec 3>&1
+    debootstrapverbose='--verbose '
 fi
 
 docker_bootstrap
