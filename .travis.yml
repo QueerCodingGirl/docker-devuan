@@ -19,4 +19,5 @@ matrix:
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u darkgigabyte --password-stdin
   - set +e
+  - set -v
   - ./build.sh -v -t 'Europe/Berlin' -u darkgigabyte -p -d $DISTNAME
