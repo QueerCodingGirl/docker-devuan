@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 
 ###set -e
-set -v
+set -x
 
 PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
