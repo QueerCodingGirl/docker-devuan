@@ -1,0 +1,3 @@
+deb http://auto.mirror.devuan.org/merged beowulf main
+deb http://auto.mirror.devuan.org/merged beowulf-updates main
+deb http://auto.mirror.devuan.org/merged beowulf-security main

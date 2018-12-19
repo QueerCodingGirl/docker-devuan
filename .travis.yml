@@ -1,0 +1,20 @@
+sudo: required
+services:
+  - docker
+language: bash
+before_install:
+  - apt-get update  -qq -y
+  - apt-get install -qq -y debootstrap
+  - apt-get install -qq -y debian-keyring debian-archive-keyring
+  - if [ ! -e /usr/share/debootstrap/scripts/ascii ]; then ln -s /usr/share/debootstrap/scripts/sid /usr/share/debootstrap/scripts/ascii; fi
+  - if [ ! -e /usr/share/debootstrap/scripts/beowulf ]; then ln -s /usr/share/debootstrap/scripts/sid /usr/share/debootstrap/scripts/beowulf; fi
+matrix:
+  include:
+    - name: 'Devuan 1 - jessie'
+      env: DISTNAME=jessie
+    - name: 'Devuan 2 - ascii'
+      env: DISTNAME=ascii
+    - name: 'Devuan 3 - beowulf'
+      env: DISTNAME=beowulf
+script:
+  - ./build.sh -v -t 'Europe/Berlin' -u darkgigabyte -d $DISTNAME

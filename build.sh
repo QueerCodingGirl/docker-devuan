@@ -7,9 +7,11 @@ set -e
 PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
 arch='amd64'
-stable='jessie'
-testing='ascii'
-version='2.0'
+oldstable='jessie'
+stable='ascii'
+testing='beowulf'
+# using semantic versioning: semver.org
+version='3.0.0'
 
 function usage()
 {
@@ -37,7 +39,7 @@ OPTIONS:
                         default: no
 
    -l, --latest         Force the "latest"
-                        default: jessie
+                        default: ascii
 
    -v, --verbose        Verbose mode
 
@@ -350,8 +352,14 @@ then
             mirror='http://auto.mirror.devuan.org/merged'
             ;;
         ascii|2|2.0)
-            distname='stretch'
+            distname='ascii'
             distid='2'
+            mirror='http://auto.mirror.devuan.org/merged'
+            include='gnupg2'
+            ;;
+        beowulf|3|3.0)
+            distname='beowulf'
+            distid='3'
             mirror='http://auto.mirror.devuan.org/merged'
             include='gnupg2'
             ;;
@@ -380,7 +388,7 @@ fi
 # -l / --latest
 if [ -z "${latest}" ]
 then
-    latest='jessie'
+    latest='ascii'
 fi
 
 # -v / --verbose
