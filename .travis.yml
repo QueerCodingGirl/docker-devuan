@@ -3,11 +3,11 @@ services:
   - docker
 language: bash
 before_install:
-  - apt-get update  -qq -y
-  - apt-get install -qq -y debootstrap
-  - apt-get install -qq -y debian-keyring debian-archive-keyring
-  - if [ ! -e /usr/share/debootstrap/scripts/ascii ]; then ln -s /usr/share/debootstrap/scripts/sid /usr/share/debootstrap/scripts/ascii; fi
-  - if [ ! -e /usr/share/debootstrap/scripts/beowulf ]; then ln -s /usr/share/debootstrap/scripts/sid /usr/share/debootstrap/scripts/beowulf; fi
+  - sudo apt-get update  -qq -y
+  - sudo apt-get install -qq -y debootstrap
+  - sudo apt-get install -qq -y debian-keyring debian-archive-keyring
+  - if [ ! -e /usr/share/debootstrap/scripts/ascii ]; then sudo ln -s /usr/share/debootstrap/scripts/sid /usr/share/debootstrap/scripts/ascii; fi
+  - if [ ! -e /usr/share/debootstrap/scripts/beowulf ]; then sudo ln -s /usr/share/debootstrap/scripts/sid /usr/share/debootstrap/scripts/beowulf; fi
 matrix:
   include:
     - name: 'Devuan 1 - jessie'
