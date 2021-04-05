@@ -8,9 +8,10 @@ set -x
 PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
 arch='amd64'
-oldstable='jessie'
-stable='ascii'
-testing='beowulf'
+oldoldstable='jessie'
+oldstable='ascii'
+stable='beowulf'
+testing='chimaera'
 # using semantic versioning: semver.org
 version='3.0.0'
 
@@ -258,7 +259,7 @@ function docker_import()
     docker run "${user}/devuan:${distid}" \
            echo " * build ${user}/devuan:${distid}" 1>&3
 
-    for import in latest oldstable stable testing
+    for import in latest oldoldstable oldstable stable testing
     do
         if [ "${distname}" = "${!import}" ]
         then
@@ -278,7 +279,7 @@ function docker_push()
     echo " * push ${user}/devuan:${distid}" 1>&3
     docker push "${user}/devuan:${distid}"
 
-    for push in latest oldstable stable testing
+    for push in latest oldoldstable oldstable stable testing
     do
         if [ "${distname}" = "${!push}"  ]
         then
@@ -351,18 +352,24 @@ then
         jessie|1|1.0)
             distname='jessie'
             distid='1'
-            mirror='http://auto.mirror.devuan.org/merged'
+            mirror='http://archive.devuan.org/merged'
             ;;
         ascii|2|2.0)
             distname='ascii'
             distid='2'
-            mirror='http://auto.mirror.devuan.org/merged'
+            mirror='http://deb.devuan.org/merged'
             include='gnupg2'
             ;;
         beowulf|3|3.0)
             distname='beowulf'
             distid='3'
-            mirror='http://auto.mirror.devuan.org/merged'
+            mirror='http://deb.devuan.org/merged'
+            include='gnupg2'
+            ;;
+        chimaera|4|4.0)
+            distname='chimaera'
+            distid='4'
+            mirror='http://deb.devuan.org/merged'
             include='gnupg2'
             ;;
         *)
