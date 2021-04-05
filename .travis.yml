@@ -8,6 +8,7 @@ before_install:
   - sudo apt-get install -qq -y debian-keyring debian-archive-keyring
   - if [ ! -e /usr/share/debootstrap/scripts/ascii ]; then sudo ln -s /usr/share/debootstrap/scripts/sid /usr/share/debootstrap/scripts/ascii; fi
   - if [ ! -e /usr/share/debootstrap/scripts/beowulf ]; then sudo ln -s /usr/share/debootstrap/scripts/sid /usr/share/debootstrap/scripts/beowulf; fi
+  - if [ ! -e /usr/share/debootstrap/scripts/chimaera ]; then sudo ln -s /usr/share/debootstrap/scripts/sid /usr/share/debootstrap/scripts/chimaera; fi
 matrix:
   include:
     - name: 'Devuan 1 - jessie'
@@ -16,6 +17,8 @@ matrix:
       env: DISTNAME=ascii
     - name: 'Devuan 3 - beowulf'
       env: DISTNAME=beowulf
+    - name: 'Devuan 4 - chimaera'
+      env: DISTNAME=chimaera
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u queercodinggirl --password-stdin
   - set +e
