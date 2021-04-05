@@ -72,13 +72,13 @@ $ ./build.sh -h
 Build your own Debian image (eg. jessie).
 
 ```bash
-$ ./build.sh -d jessie -u darkgigabyte
+$ ./build.sh -d jessie -u queercodinggirl
 ```
 
 Build your own Devuan image (eg. ascii) and push it on the Docker Hub.
 
 ```bash
-$ ./build.sh -d ascii -u darkgigabyte -p
+$ ./build.sh -d ascii -u queercodinggirl -p
 ```
 
 ## Limitations
@@ -93,6 +93,6 @@ request.
 
 [license-img]: https://img.shields.io/badge/license-Apache-blue.svg
 [license-href]: /LICENSE
-[docker-img]: https://img.shields.io/docker/pulls/darkgigabyte/devuan.svg
-[docker-href]: https://registry.hub.docker.com/u/darkgigabyte/devuan
+[docker-img]: https://img.shields.io/docker/pulls/queercodinggirl/devuan.svg
+[docker-href]: https://registry.hub.docker.com/u/queercodinggirl/devuan
 [contribute-href]: /CONTRIBUTING.md
