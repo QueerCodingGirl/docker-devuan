@@ -14,7 +14,7 @@ share your modifications with the community.
 
 Use this script to build your own base system or use the travis build base images from Docker Hub.
 
-I (darkgigabyte) forked this repo from [https://github.com/vente-privee/docker-devuan] and fixed the build script because it wasn't able to build the ascii image and had no support for beowulf. Also i don't wanted to use their CI system. This repo now uses travis-ci and builds/pushes all devuan releases at a regular interval.
+I (queercodinggirl) forked this repo from [https://github.com/vente-privee/docker-devuan] and fixed the build script because it wasn't able to build the ascii image and had no support for beowulf. Also i don't wanted to use their CI system. This repo now uses travis-ci and builds/pushes all devuan releases at a regular interval.
 
 ## Tags
 
