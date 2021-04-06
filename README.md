@@ -20,9 +20,10 @@ I (queercodinggirl) forked this repo from [https://github.com/vente-privee/docke
 
 Supported tags.
 
-- 1, jessie, oldstable
-- 2, ascii, stable, latest
-- 3, beowulf, testing
+- 1, jessie, oldoldstable
+- 2, ascii, oldstable
+- 3, beowulf, stable, latest
+- 4, chimaera, testing
 
 ## Requirements
 
